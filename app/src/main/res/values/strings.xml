@@ -2,4 +2,9 @@
     <string name="app_name">Restaurant Organizer</string>
 
     <string name="menu">Menu</string>
+    <string name="newItem">Add new Item</string>
+    <string name="textName">Insert Name</string>
+    <string name="textPrice">Insert Price</string>
+    <string name="confirm">Confirm</string>
+    <string name="back">Return to Menu</string>
 </resources>
