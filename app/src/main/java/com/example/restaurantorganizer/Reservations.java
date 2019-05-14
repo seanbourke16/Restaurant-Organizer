@@ -1,6 +1,7 @@
 package com.example.restaurantorganizer;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -20,7 +21,7 @@ public class Reservations extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_menu);
+        setContentView(R.layout.activity_reservations);
 
         r=getIntent().getParcelableArrayListExtra("r");
 
@@ -30,6 +31,14 @@ public class Reservations extends AppCompatActivity {
         mDefinitionsButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent i= new Intent(Reservations.this,NewReservation.class);
+                i.putParcelableArrayListExtra("r",r);
+                startActivity(i);
+            }
+        });
+        final Button hDefinitionsButton = findViewById(R.id.home);
+        hDefinitionsButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent i= new Intent(Reservations.this,MainActivity.class);
                 i.putParcelableArrayListExtra("r",r);
                 startActivity(i);
             }
@@ -46,7 +55,11 @@ public class Reservations extends AppCompatActivity {
         na="Reservation Time";
         p.setText(String.valueOf(na));
         n.setWidth(200);
+        n.setTextColor(Color.argb(255,0,0,0));
+        n.setTextSize(20);
         p.setWidth(200);
+        p.setTextColor(Color.argb(255,0,0,0));
+        p.setTextSize(20);
         row.addView(n);
         row.addView(p);
         ll.addView(row,0);
@@ -62,7 +75,11 @@ public class Reservations extends AppCompatActivity {
             String pr=String.valueOf(r.get(0).date);
             p.setText(pr);
             n.setWidth(200);
+            n.setTextColor(Color.argb(255,0,0,0));
+            n.setTextSize(20);
             p.setWidth(200);
+            p.setTextColor(Color.argb(255,0,0,0));
+            p.setTextSize(20);
             row.addView(n);
             row.addView(p);
             ll.addView(row,i+1);

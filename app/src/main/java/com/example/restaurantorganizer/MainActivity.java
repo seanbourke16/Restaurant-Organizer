@@ -21,10 +21,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        if(getIntent().getParcelableArrayListExtra("r")!=null)r=getIntent().getParcelableArrayListExtra("r");
+        if(getIntent().getParcelableArrayListExtra("m")!=null)m=getIntent().getParcelableArrayListExtra("m");
         if(m==null)m=new ArrayList<>();
         if(r==null)r=new ArrayList<>();
 
-        BottomNavigationView navigation = findViewById(R.id.navigation);
+        /*BottomNavigationView navigation = findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
@@ -45,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
                         i3.putParcelableArrayListExtra("r",r);
                         startActivity(i3);
                         return true;
-                } return false; }});
+                } return false; }});*/
 
         final Button mDefinitionsButton = findViewById(R.id.men);
         mDefinitionsButton.setOnClickListener(new View.OnClickListener() {
@@ -55,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
-        /*final Button mInterpretationsButton = findViewById(R.id.reservations);
+        final Button mInterpretationsButton = findViewById(R.id.reservations);
         mInterpretationsButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent i= new Intent(MainActivity.this,Reservations.class);
@@ -67,10 +69,10 @@ public class MainActivity extends AppCompatActivity {
         mManagementButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent i= new Intent(MainActivity.this,Tables.class);
-                i.putParcelableArrayListExtra("m",m);
+                i.putParcelableArrayListExtra("t",m);
                 startActivity(i);
             }
-        });*/
+        });
 
         //tables with waiting list and click table to get orders and bill
         //input reservations

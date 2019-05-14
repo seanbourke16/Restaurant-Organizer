@@ -38,6 +38,8 @@ public class NewReservation extends AppCompatActivity {
         mInterpretationsButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent i= new Intent(NewReservation.this,Reservations.class);
+                Log.e("res",r.size()+"");
+                Log.e("res",r.get(r.size()-1).date+"");
                 i.putParcelableArrayListExtra("r",r);
                 startActivity(i);
             }

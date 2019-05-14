@@ -1,6 +1,7 @@
 package com.example.restaurantorganizer;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -34,6 +35,14 @@ public class Menu extends AppCompatActivity {
                 startActivity(i);
             }
         });
+        final Button hDefinitionsButton = findViewById(R.id.home);
+        hDefinitionsButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent i= new Intent(Menu.this,MainActivity.class);
+                i.putParcelableArrayListExtra("m",m);
+                startActivity(i);
+            }
+        });
 
 
         TableRow row= new TableRow(this);
@@ -46,7 +55,11 @@ public class Menu extends AppCompatActivity {
         na="Price";
         p.setText(String.valueOf(na));
         n.setWidth(200);
+        n.setTextColor(Color.argb(255,0,0,0));
+        n.setTextSize(20);
         p.setWidth(200);
+        p.setTextColor(Color.argb(255,0,0,0));
+        p.setTextSize(20);
         row.addView(n);
         row.addView(p);
         ll.addView(row,0);
@@ -60,9 +73,14 @@ public class Menu extends AppCompatActivity {
             p = new TextView(this);
             n.setText(m.get(i).name);
             String pr="$"+String.valueOf(m.get(i).price);
+            if(m.get(i).price%0.1==0)pr+="0";
             p.setText(pr);
             n.setWidth(200);
+            n.setTextColor(Color.argb(255,0,0,0));
+            n.setTextSize(20);
             p.setWidth(200);
+            p.setTextColor(Color.argb(255,0,0,0));
+            p.setTextSize(20);
             row.addView(n);
             row.addView(p);
             ll.addView(row,i+1);

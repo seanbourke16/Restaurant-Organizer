@@ -10,6 +10,8 @@
     <string name="item">Item</string>
     <string name="price">Price</string>
     <string name="textName">Insert Name</string>
+    <string name="textDate">Insert Date</string>
+    <string name="textTime">Insert Time</string>
     <string name="textPrice">Insert Price</string>
     <string name="confirm">Confirm</string>
     <string name="back">Return to Menu</string>
