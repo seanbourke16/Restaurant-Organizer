@@ -36,18 +36,36 @@ public class Menu extends AppCompatActivity {
         });
 
 
+        TableRow row= new TableRow(this);
+        TableRow.LayoutParams lp = new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT);
+        row.setLayoutParams(lp);
+        TextView n = new TextView(this);
+        TextView p = new TextView(this);
+        String na="Item";
+        n.setText(na);
+        na="Price";
+        p.setText(String.valueOf(na));
+        n.setWidth(200);
+        p.setWidth(200);
+        row.addView(n);
+        row.addView(p);
+        ll.addView(row,0);
+
         for (int i = 0; i <m.size(); i++) {
 
-            TableRow row= new TableRow(this);
-            TableRow.LayoutParams lp = new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT);
+            row= new TableRow(this);
+            lp = new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT);
             row.setLayoutParams(lp);
-            TextView n = new TextView(this);
-            TextView p = new TextView(this);
+            n = new TextView(this);
+            p = new TextView(this);
             n.setText(m.get(i).name);
-            p.setText(String.valueOf(m.get(i).price));
+            String pr="$"+String.valueOf(m.get(i).price);
+            p.setText(pr);
+            n.setWidth(200);
+            p.setWidth(200);
             row.addView(n);
             row.addView(p);
-            ll.addView(row,i);
+            ll.addView(row,i+1);
         }
     }
 }

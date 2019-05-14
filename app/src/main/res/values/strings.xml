@@ -1,8 +1,14 @@
 <resources>
     <string name="app_name">Restaurant Organizer</string>
 
+    <string name="home">Home</string>
     <string name="menu">Menu</string>
+    <string name="table">Tables</string>
+    <string name="reservations">Reservations</string>
     <string name="newItem">Add new Item</string>
+    <string name="newRes">Add new Reservation</string>
+    <string name="item">Item</string>
+    <string name="price">Price</string>
     <string name="textName">Insert Name</string>
     <string name="textPrice">Insert Price</string>
     <string name="confirm">Confirm</string>
